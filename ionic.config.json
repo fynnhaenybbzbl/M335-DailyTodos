@@ -1,0 +1,7 @@
+{
+  "name": "dailytodo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

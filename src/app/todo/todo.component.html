@@ -1,0 +1,20 @@
+<ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+  <ion-refresher-content></ion-refresher-content>
+</ion-refresher>
+
+<ion-button id="new" expand="full" color="success" (click)="goto()">Neue Todo erstellen<ion-icon slot="end" name="add-outline"></ion-icon>
+</ion-button><ion-card>
+  <ion-accordion-group>
+    <ion-accordion *ngFor="let todo of todo">
+      <ion-item slot="header" color="light">
+        <ion-label>{{todo.title}}</ion-label>
+        <ion-label>Zeit: {{todo.time}}</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">{{todo.description}}</div>
+      <ion-button color="success" class="ion-padding" slot="content" (click)="createMap(todo.latitude, todo.longitude)">Route planen</ion-button>
+      <ion-button color="warning" class="ion-padding" slot="content" (click)="presentModal(todo.id, todo.title, todo.description, todo.time, todo.latitude, todo.longitude)">Bearbeiten</ion-button>
+      <ion-button color="danger" class="ion-padding" slot="content" (click)="delete(todo.id)">Löschen</ion-button>
+    </ion-accordion>
+  </ion-accordion-group>
+</ion-card>
+<capacitor-google-map #map id="map"></capacitor-google-map>

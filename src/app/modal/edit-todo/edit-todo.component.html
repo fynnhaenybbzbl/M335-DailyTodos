@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Hallo</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-card color="light">
+  <ion-card-content>
+
+    <form
+      (ngSubmit)="updateTodo(todoForm.value)"
+      [formGroup]="todoForm">
+
+        <ion-input
+          label="Titel"
+          maxlength="15"
+          labelPlacement="floating"
+          errorText="Titel fehlt"
+          formControlName="title"
+          [required]="true">
+      </ion-input>
+
+      <ion-input
+      label="Beschreibung"
+      labelPlacement="floating"
+      errorText="Beschreibung fehlt"
+      formControlName="description"
+      [required]="true">
+      </ion-input>
+
+      <ion-input
+      label="Zeit"
+      type="time"
+      labelPlacement="floating"
+      errorText="Zeit fehlt"
+      formControlName="time"
+      [required]="true">
+      </ion-input>
+
+      <ion-input
+      label="Latitude"
+      labelPlacement="floating"
+      type="number"
+      errorText="Latitude fehlt"
+      formControlName="latitude"
+      [required]="true">
+  </ion-input>
+
+  <ion-input
+  label="Longitude"
+  labelPlacement="floating"
+  type="number"
+  errorText="Longitude fehlt"
+  formControlName="longitude"
+  required="true">
+</ion-input>
+
+      <ion-button
+      color="medium" (click)="cancel()">
+          Abbrechen
+      </ion-button>
+
+      <ion-button
+        type="submit"
+        (click)="confirm()"
+        [strong]="true"
+        slot="end"
+        >Speichern
+      </ion-button>
+
+
+    </form>
+
+  </ion-card-content>
+
+</ion-card>

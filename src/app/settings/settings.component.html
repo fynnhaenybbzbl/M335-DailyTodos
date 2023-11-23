@@ -1,0 +1,17 @@
+<ion-content>
+  <ion-title>Aussehen</ion-title>
+  <ion-list [inset]="true">
+    <ion-item>
+      <ion-toggle [(ngModel)]="themeToggle" (ionChange)="toggleChange($event)" justify="space-between">
+        Dark Mode</ion-toggle>
+    </ion-item>
+  </ion-list>
+
+  <ion-title>Dein Gerät</ion-title>
+  <ion-list [inset]="true">
+    <app-geolocator></app-geolocator>
+
+    <app-battery-status></app-battery-status>
+  </ion-list>
+
+</ion-content>
