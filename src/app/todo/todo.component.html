@@ -1,3 +1,4 @@
+<ion-content>
 <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
   <ion-refresher-content></ion-refresher-content>
 </ion-refresher>
@@ -18,4 +19,6 @@
   </ion-accordion-group>
 </ion-card>
 <ion-button *ngIf="existMap" (click)="destroy()">Karte löschen</ion-button>
-<capacitor-google-map #map id="map"></capacitor-google-map>
+
+  <capacitor-google-map #map></capacitor-google-map>
+</ion-content>
