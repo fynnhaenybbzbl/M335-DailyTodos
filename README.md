@@ -11,3 +11,5 @@ Mein Emulator: Pixel 7 API 33 / Tiramisu (in Android Studios herunterladen)
 5. "ionic cap build android" eingeben (in VSC)
 6. "ionic cap run android -l --external" eingeben (in VSC)
 7. Nachdem die App gestartet hat, Berechtigungen für die App geben (auf dem Emulator)
+
+https://github.com/fynnhaenybbzbl/M335-DailyTodos
