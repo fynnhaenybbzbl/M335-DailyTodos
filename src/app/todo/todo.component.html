@@ -17,4 +17,5 @@
     </ion-accordion>
   </ion-accordion-group>
 </ion-card>
+<ion-button *ngIf="existMap" (click)="destroy()">Karte löschen</ion-button>
 <capacitor-google-map #map id="map"></capacitor-google-map>

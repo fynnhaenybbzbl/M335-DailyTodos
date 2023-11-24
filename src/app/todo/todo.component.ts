@@ -28,6 +28,8 @@ export class TodoComponent  implements OnInit {
   latitude : number = 0
   longitude : number = 0
 
+  existMap: boolean = false
+
   constructor(public todoService: TodoService, private router : Router, public geolocationService : GeolocatorService, private modalCtrl: ModalController) {}
   
   async presentModal(id: number, title: string, description: string, time: string, latitude: number, longitude: number) {
@@ -86,6 +88,7 @@ export class TodoComponent  implements OnInit {
   newMap?: GoogleMap;
 
   async createMap(lat1: number, lng1: number) {
+    this.existMap = true;
     if (!this.mapRef) {
       console.error('Unable to create map, no element ref');
       return;
@@ -134,5 +137,10 @@ export class TodoComponent  implements OnInit {
 
     const polylineReference = await this.newMap.addPolylines([polylineConfig]);
     console.log("TESt", lat1, lng1)
+  }
+
+  async destroy() {
+    this.newMap?.destroy();
+    this.existMap = false;
   }
 }
